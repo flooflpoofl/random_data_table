@@ -1,0 +1,19 @@
+{
+  "name": "random_data_table",
+  "version": "1.0.0",
+  "description": "An app for generating tables filled with random content",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "devStart": "nodemon app.js"
+  },
+  "author": "Floofl Poofl",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.7",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

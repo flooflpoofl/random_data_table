@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap');
+
+:root {
+    --clr-page-background: #333333;
+
+    --clr-table-background: white;
+    --clr-table-foreground: black;
+    --clr-table-head-background: #73026B;
+    --clr-table-head-foreground: #ffffff;
+    --clr-table-row-accent: #F2ACDA;
+
+    --clr-table-border: #73026B;
+
+    --clr-label: #c0c0c0;
+
+    --clr-update-foreground: white;
+    --clr-update-background: #73026B;
+
+    --font-family-header: 'Roboto', sans-serif;;
+    --font-family-body: 'Open Sans', sans-serif;;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--clr-page-background);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 2rem 0;
+
+    font-size: 2.75em;
+    font-family: var(--font-family-header);
+    text-transform: uppercase;
+
+    color: white;
+    
+    border-bottom: 2px solid var(--clr-table-row-accent);
+}
+
+.random-table {
+    min-width: 250px;
+    margin-bottom: 2rem;
+    padding: 1em;
+    
+    border: 1px solid #333;
+    border-radius: 0.5em;
+
+    background-color: white;
+
+    overflow: scroll;
+}
+
+.random-table__table {
+    width: 100%;
+
+    background-color: var(--clr-table-background);
+    border: 2px solid var(--clr-table-border);
+    border-collapse: collapse;
+
+    margin-bottom: 0.5em;
+}
+
+.random-table__table thead tr {
+    background-color: var(--clr-table-head-background);
+    color: var(--clr-table-head-foreground);
+}
+
+.random-table__table th,
+.random-table__table td {
+    padding: 0.375em 6px;
+    border: 2px solid var(--clr-table-border);
+    text-align: left;
+}
+
+.random-table__table th {
+    font-family: var(--font-family-header);
+    font-size: 1.25em;
+}
+
+.random-table__table td {
+    font-family: var(--font-family-body);
+}
+
+.random-table__table th:nth-of-type(3),
+.random-table__table td:nth-of-type(3) {
+    text-align: center;
+    padding-right: 0.5em;
+}
+
+.random-table__table tbody tr:nth-of-type(even) {
+    background-color: var(--clr-table-row-accent);
+}
+
+.random-table__options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5em 0.25em 0;
+}
+
+.random-table__label {
+    color: var(--clr-label);
+
+    font-size: 0.875em;
+    font-style: oblique;
+}
+
+.random-table__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    padding: 0.25em;
+
+    background-color: var(--clr-update-background);
+    color: var(--clr-update-foreground);
+
+    cursor: pointer;
+}
+
+.random-table__button > i {
+    font-size: 1.5em;
+}
+
+.random-table__button:hover {
+    background-color: var(--clr-table-row-accent);
+} 
+
+.random-table__button--updating {
+    animation: 1s updating infinite linear;
+}
+
+@keyframes updating {
+    to {
+        transform: rotate(1turn);
+    }
+}
